@@ -8,7 +8,7 @@ Sequel.migration do
 
     join = {
       Sequel[:versions][:pacticipant_id] => Sequel[:latest_version_orders][:pacticipant_id],
-      Sequel[:versions][:order] => Sequel[:latest_version_orders][:latest_version_order]
+      Sequel[:versions][:oorder] => Sequel[:latest_version_orders][:latest_version_order]
     }
 
     latest_versions = from(:versions)

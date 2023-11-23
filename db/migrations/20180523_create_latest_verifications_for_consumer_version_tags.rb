@@ -12,7 +12,7 @@ Sequel.migration do
         Sequel[:lv][:consumer_version_tag_name],
         Sequel[:pv][:sha].as(:pact_version_sha),
         Sequel[:prv][:number].as(:provider_version_number),
-        Sequel[:prv][:order].as(:provider_version_order),
+        Sequel[:prv][:oorder].as(:provider_version_order),
         )
       .select_append{ verifications.* }
       .join(:latest_verification_ids_for_consumer_version_tags,

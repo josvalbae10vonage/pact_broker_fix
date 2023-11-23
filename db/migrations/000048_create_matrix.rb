@@ -21,7 +21,7 @@ Sequel.migration do
           Sequel[p][:provider_name],
           Sequel[:versions][:id].as(:provider_version_id),
           Sequel[:versions][:number].as(:provider_version_number),
-          Sequel[:versions][:order].as(:provider_version_order),
+          Sequel[:versions][:oorder].as(:provider_version_order),
           Sequel[:verifications][:id].as(:verification_id),
           Sequel[:verifications][:success],
           Sequel[:verifications][:number].as(:verification_number),

@@ -1,7 +1,6 @@
 Sequel.migration do
   change do
-    add_column(:versions, :order, Integer)
-    self[:versions].update(:order => :id)
+    rename_column(:versions, :oorder , :order)
   end
 end
 

@@ -7,7 +7,7 @@ Sequel.migration do
         :success,
         :provider_version_id,
         Sequel[:v][:number].as(:provider_version_number),
-        Sequel[:v][:order].as(:provider_version_order),
+        Sequel[:v][:oorder].as(:provider_version_order),
         :build_url,
         :pact_version_id,
         :execution_date,

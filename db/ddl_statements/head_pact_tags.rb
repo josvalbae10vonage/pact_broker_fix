@@ -4,7 +4,7 @@ def head_pact_tags_v1(connection)
   .join(:latest_tagged_pact_consumer_version_orders, {
     Sequel[:lp][:consumer_id] => Sequel[:o][:consumer_id],
     Sequel[:lp][:provider_id] => Sequel[:o][:provider_id],
-    Sequel[:cv][:order] => Sequel[:o][:latest_consumer_version_order]
+    Sequel[:cv][:oorder] => Sequel[:o][:latest_consumer_version_order]
   }, { table_alias: :o })
   .select(Sequel[:o][:tag_name].as(:name), Sequel[:lp][:pact_publication_id])
 end
@@ -23,7 +23,7 @@ def head_pact_tags_v2(connection)
   .join(:latest_tagged_pact_consumer_version_orders, {
     Sequel[:lp][:consumer_id] => Sequel[:o][:consumer_id],
     Sequel[:lp][:provider_id] => Sequel[:o][:provider_id],
-    Sequel[:cv][:order] => Sequel[:o][:latest_consumer_version_order]
+    Sequel[:cv][:oorder] => Sequel[:o][:latest_consumer_version_order]
   }, { table_alias: :o } )
   .join(:tags, {
     Sequel[:tags][:version_id] => Sequel[:cv][:id],

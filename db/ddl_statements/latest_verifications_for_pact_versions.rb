@@ -11,7 +11,7 @@ def latest_verifications_for_pact_versions_v4(connection)
       Sequel[v][:created_at],
       Sequel[v][:provider_version_id],
       Sequel[:s][:number].as(:provider_version_number),
-      Sequel[:s][:order].as(:provider_version_order),
+      Sequel[:s][:oorder].as(:provider_version_order),
       Sequel[v][:test_results],
       Sequel[v][:consumer_id],
       Sequel[v][:provider_id],

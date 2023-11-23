@@ -11,7 +11,7 @@ def all_verifications_v2(connection)
       :success,
       :provider_version_id,
       Sequel[:v][:number].as(:provider_version_number),
-      Sequel[:v][:order].as(:provider_version_order),
+      Sequel[:v][:oorder].as(:provider_version_order),
       Sequel[:verifications][:build_url],
       :pact_version_id,
       :execution_date,

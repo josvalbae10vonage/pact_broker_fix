@@ -5,7 +5,7 @@ Sequel.migration do
       Sequel::Model.db[:pact_publications].select(
       Sequel[:pact_publications][:id],
       Sequel[:c][:id].as(:consumer_id), Sequel[:c][:name].as(:consumer_name),
-      Sequel[:cv][:id].as(:consumer_version_id), Sequel[:cv][:number].as(:consumer_version_number), Sequel[:cv][:order].as(:consumer_version_order),
+      Sequel[:cv][:id].as(:consumer_version_id), Sequel[:cv][:number].as(:consumer_version_number), Sequel[:cv][:oorder].as(:consumer_version_order),
       Sequel[:p][:id].as(:provider_id), Sequel[:p][:name].as(:provider_name),
       Sequel[:pact_publications][:revision_number], Sequel[:pv][:id].as(:pact_version_id), Sequel[:pv][:sha].as(:pact_version_sha), Sequel[:pact_publications][:created_at]).
       join(:versions, {:id => :consumer_version_id}, {:table_alias => :cv, implicit_qualifier: :pact_publications}).

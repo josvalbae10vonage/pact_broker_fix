@@ -2,7 +2,7 @@ Sequel.migration do
   change do
     create_view(:all_pacts,
       Sequel::Model.db[:pacts].select(Sequel[:pacts][:id], Sequel[:c][:id].as(:consumer_id), Sequel[:c][:name].as(:consumer_name),
-      Sequel[:cv][:number].as(:consumer_version_number), Sequel[:cv][:order].as(:consumer_version_order),
+      Sequel[:cv][:number].as(:consumer_version_number), Sequel[:cv][:oorder].as(:consumer_version_order),
       Sequel[:p][:id].as(:provider_id), Sequel[:p][:name].as(:provider_name),
       Sequel[:pacts][:json_content]).
       join(:versions, {:id => :version_id}, {:table_alias => :cv, implicit_qualifier: :pacts}).
